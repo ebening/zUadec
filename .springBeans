@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.7.1.me201602031002]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>WebRoot/WEB-INF/spring/applicationContext.xml</config>
+		<config>resources/zUadec-dao-context.xml</config>
+		<config>resources/zUadec-security-context.xml</config>
+		<config>resources/zUadec-service-context.xml</config>
+		<config>resources/zUadec-web-context.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

@@ -1,0 +1,6 @@
+#org.skyway.core settings
+#Sun Aug 21 22:17:59 CDT 2016
+version=11.0.1.me201602080330
+default.top.level.package=com.uadec
+models.folder.name=.springDSL
+initialized=true

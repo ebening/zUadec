@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="WebApp_ID"
+	version="3.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>zUadec</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.request.RequestContextListener
+		</listener-class>
+	</listener>
+	<filter>
+		<description>generated-persistence-filter</description>
+		<filter-name>mysqlFilter</filter-name>
+		<filter-class>
+			org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter
+		</filter-class>
+		<init-param>
+			<param-name>entityManagerFactoryBeanName</param-name>
+			<param-value>mysql</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<description>generated-sitemesh-filter</description>
+		<filter-name>Sitemesh Filter</filter-name>
+		<filter-class>
+			com.opensymphony.module.sitemesh.filter.PageFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>mysqlFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Sitemesh Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<description>generated-servlet</description>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:zUadec-web-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>generated-resources-servlet</description>
+		<servlet-name>Resource Servlet</servlet-name>
+		<servlet-class>
+			org.springframework.js.resource.ResourceServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Resource Servlet</servlet-name>
+		<url-pattern>/resources/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>*.action</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/newRelTramiteDocumento</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/indexRelTramiteDocumento</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/deleteRelTramiteDocumento</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/editRelTramiteDocumento</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/confirmDeleteRelTramiteDocumento</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/selectRelTramiteDocumento</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/saveRelTramiteDocumento</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/Bitacora/{bitacora_idBitacora}</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/Bitacora</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/deleteSolicitud</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/saveSolicitud</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/newSolicitud</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/confirmDeleteSolicitud</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/selectSolicitud</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/editSolicitud</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/indexSolicitud</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/indexUsuario</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/confirmDeleteUsuario</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/newUsuario</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/editUsuario</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/deleteUsuario</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/saveUsuario</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/selectUsuario</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/Usuario</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/Usuario/{usuario_idUsuario}</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>
+			/CatTipoCuenta/{cattipocuenta_idTipoCuenta}
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/CatTipoCuenta</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/CatTipoTramite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>
+			/CatTipoTramite/{cattipotramite_idTipoTramite}
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>
+			/DetalleCuentas/{detallecuentas_idDetalleCuentas}
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/DetalleCuentas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/Solicitud</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/Solicitud/{solicitud_idSolicitud}</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/indexBitacora</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/editBitacora</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/deleteBitacora</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/saveBitacora</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/selectBitacora</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/confirmDeleteBitacora</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/newBitacora</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/saveRol</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/confirmDeleteRol</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/selectRol</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/indexRol</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/editRol</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/newRol</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/deleteRol</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/indexDetalleCuentas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/editDetalleCuentas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/deleteDetalleCuentas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/confirmDeleteDetalleCuentas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/saveDetalleCuentas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/newDetalleCuentas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/selectDetalleCuentas</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>
+			/RelTramiteDocumento/{reltramitedocumento_idTramiteDoc}
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/RelTramiteDocumento</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/Rol/{rol_idRol}</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/Rol</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/DocumentoImportado</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>
+			/DocumentoImportado/{documentoimportado_idDocumentoImportado}
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/CatDocumentos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>
+			/CatDocumentos/{catdocumentos_idDocumento}
+		</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/editDocumentoImportado</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/saveDocumentoImportado</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/confirmDeleteDocumentoImportado</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/selectDocumentoImportado</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/newDocumentoImportado</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/deleteDocumentoImportado</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/indexDocumentoImportado</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/indexCatTipoCuenta</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/editCatTipoCuenta</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/saveCatTipoCuenta</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/selectCatTipoCuenta</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCatTipoCuenta</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/newCatTipoCuenta</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/deleteCatTipoCuenta</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/selectCatTipoTramite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/editCatTipoTramite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/saveCatTipoTramite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCatTipoTramite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/indexCatTipoTramite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/deleteCatTipoTramite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/newCatTipoTramite</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/confirmDeleteCatDocumentos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/selectCatDocumentos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/editCatDocumentos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/saveCatDocumentos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/newCatDocumentos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/deleteCatDocumentos</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zUadec Servlet</servlet-name>
+		<url-pattern>/indexCatDocumentos</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>WEB-INF/spring/applicationContext.xml</param-value>
+	</context-param>
+</web-app>

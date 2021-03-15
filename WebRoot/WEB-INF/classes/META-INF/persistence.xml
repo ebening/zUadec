@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	
+	
+		<persistence-unit name="mysql" transaction-type="JTA">
+			<description>generated-persistence-unit</description>
+					<provider>org.hibernate.ejb.HibernatePersistence</provider>
+      			<class>com.uadec.domain.DocumentoImportado</class>
+      			<class>com.uadec.domain.CatDocumentos</class>
+      			<class>com.uadec.domain.Usuario</class>
+      			<class>com.uadec.domain.CatTipoTramite</class>
+      			<class>com.uadec.domain.Rol</class>
+      			<class>com.uadec.domain.CatTipoCuenta</class>
+      			<class>com.uadec.domain.RelTramiteDocumento</class>
+      			<class>com.uadec.domain.Bitacora</class>
+      			<class>com.uadec.domain.Solicitud</class>
+      			<class>com.uadec.domain.DetalleCuentas</class>
+   			<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		</persistence-unit>
+
+	
+</persistence>
